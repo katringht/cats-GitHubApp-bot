@@ -6,6 +6,7 @@ from github import Github, GithubIntegration
 
 app = Flask(__name__)
 app_id = '304223'
+
 # Read the bot certificate
 with open(
         os.path.normpath(os.path.expanduser('/Users/ekaterinatarasova/certs/githud/meme-bot-for-your-repo.2023-03-12.private-key.pem')),
