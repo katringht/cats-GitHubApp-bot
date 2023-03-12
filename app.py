@@ -4,7 +4,6 @@ import requests
 from flask import Flask, request
 from github import Github, GithubIntegration
 
-# comment for test pull request
 app = Flask(__name__)
 app_id = '304223'
 # Read the bot certificate
@@ -47,7 +46,7 @@ def bot():
     issue = repo.get_issue(number=payload['pull_request']['number'])
 
     # Call meme-api to get a random meme
-    response = requests.get(url='https://meme-api.herokuapp.com/gimme')
+    response = requests.get(url='https://meme-api.com/gimme')
     if response.status_code != 200:
         return 'ok'
 
