@@ -42,8 +42,8 @@ def bot():
             git_integration.get_installation(owner, repo_name).id
         ).token
     )
-    repo = git_connection.get_repo(f"{owner}/{repo_name}")
 
+    repo = git_connection.get_repo(f"{owner}/{repo_name}")
     issue = repo.get_issue(number=payload['pull_request']['number'])
 
     # Call meme-api to get a random meme
@@ -52,9 +52,9 @@ def bot():
         return 'ok'
 
     # Get the best resolution meme
-    meme_url = response.json()['preview'][-1]
+    meme_url = response.json()[0]['url']
     # Create a comment with the random meme
-    issue.create_comment(f"![Alt Text]({meme_url})")
+    issue.create_comment(f"![Alt Text]({meme_url})") 
     return "ok"
 
 
